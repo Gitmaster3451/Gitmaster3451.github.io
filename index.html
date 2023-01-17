@@ -4,10 +4,374 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./styles.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <h1>Din mamma</h1>
+    <script src="/js/animation.js"></script>
+    <script src="/js/greeting.js"></script>
+    <header>
+        <div class="centered">
+            <div class="name">
+                <img src="/images/logo.jpg">
+                <h1>Alexander</h1>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li class="selected" id="header1">Home</li>
+                    <li id="header2">About</li>
+                    <li id="header3">Skills</li>
+                    <li id="header4">Education</li>
+                    <li id="header5">Contact</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Animated background -->
+
+    <canvas id="canvas"></canvas>
+
+    <!-- Home / Main section -->
+
+    <section class="block main">
+        <div class="left" id="left">
+            <div class="centered home-track">
+                <div class="text home" id="homer">
+                    <p id="hellothere">Hi there,</p>
+                    <script>addGreeting("hellothere")</script>
+                    <script>addAnim("hellothere", "animate__fadeInDown", ".home-track", .7)</script>
+                    <div>
+                        <p class="splitted" id="imalex">I'm Alex&nbsp;</p><p class="splitted colored" id="lastname">Hellstén</p>
+                        <script>animateText("lastname", 160)</script>
+                        <script>addAnim("lastname", "animate__fadeInDown", ".home-track", .8)</script>
+                        <script>addAnim("imalex", "animate__fadeInDown", ".home-track", .6)</script>
+                    </div>
+                </div>
+                <script>addAnim("left", "animate__fadeInLeft", ".home-track", .4)</script>
+                <div class="subtitle">
+                    <h2 id="into">I Am Into&nbsp;</h2><h2 class="colored" id="gamedev">Programming</h2>
+                    <script>animateText("gamedev", 150)</script>
+                    <script>addAnim("gamedev", "animate__fadeInDown", ".home-track", .7)</script>
+                    <script>addAnim("into", "animate__fadeInDown", ".home-track", .5)</script>
+
+                </div>
+                <div class="buttons">
+                    <button class="button blue" onclick="scrollToTarget('.about-tracker')" id="aboutme-button">About me<img src="/images/37794.png" alt="down"></button>
+                    <script>addAnim("aboutme-button", "animate__fadeInUp", ".home-track", .5)</script>
+                </div>
+                <div class="icons">
+                    <a class="sub-icon" id="icon-1" href="https://www.tiktok.com/@thicctapeman" target="_blank"><img src="/images/icons/tiktok.png"></a>
+                    <a class="sub-icon" id="icon-2" href="https://www.youtube.com/channel/UCvK65X4yIraURWTLS8_kaMQ" target="_blank"><img src="/images/icons/youtube.png"></a>
+                    <a class="sub-icon" id="icon-3" href="https://www.tiktok.com/@thicctapeman" target="_blank"><img src="/images/icons/twitter.png"></a>
+                    <a class="sub-icon" id="icon-4" href="https://github.com/Gitmaster3451" target="_blank"><img src="/images/icons/github.png"></a>
+
+                    <script>addAnim("icon-1", "animate__fadeInUp", ".home-track", 0.7)</script>
+                    <script>addAnim("icon-2", "animate__fadeInUp", ".home-track", 0.8)</script>
+                    <script>addAnim("icon-3", "animate__fadeInUp", ".home-track", 0.9)</script>
+                    <script>addAnim("icon-4", "animate__fadeInUp", ".home-track", 1.0)</script>
+
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="centered">
+                <div class="image homeimg" id="image">
+                    <img src="/images/portrait3.png" alt="portrait">
+                    <script>addAnim("image", "animate__fadeInRight", ".home-track", .5)</script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About me section -->
+
+    <section class="block about">
+        <div class="block">
+            <div class="centered ab-section">
+                <div class="title ab_title" id="ab_title">
+                    <h1>About me</h1>
+                </div>
+                <script>addAnim("ab_title", "titleSlide", ".ab_title", 0, true)</script>
+                <div class="sw-large about-tracker" id="ab-panel-big">
+                    <div class="sw-panel">
+                        <div class="splitted-text">
+                            <p>Dwahu</p>
+                            <p>Dwahu</p>
+                        </div>
+                    </div>
+                </div>
+                <script>addAnim("ab-panel-big", "animate__fadeInDown", ".ab-section", .0)</script>
+                <div class="sw-divided">
+                    <div class="sw-panel" id="ab-panel-left">
+                    </div>
+                    <div class="sw-panel" id="ab-panel-right">
+                    </div>
+                    <script>addAnim("ab-panel-left", "animate__fadeInLeft", ".ab-section", .3)</script>
+                    <script>addAnim("ab-panel-right", "animate__fadeInRight", ".ab-section", .3)</script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills section -->
+
+    <section class="block skills">
+
+        <div class="block">
+            <div class="centered skill-section">
+                <div class="title skill_title" id="skill_title">
+                    <h1>Skills</h1>
+                </div>
+                <div class="sw-large skill-tracker" id="skill-panel-large">
+                    <div class="sliders">
+                        <div class="slider-trigger"></div>
+                        <div class="sliding-sec">
+                            <div class="holder">
+                                <div class="animate__animated sliderAnim slider" id="game" style="background-color: var(--main); --value: 75%"></div>
+                            </div>
+                            <h2 style="color: var(--main);">C# Coding & Unity</h2>
+                        </div>
+                        <div class="sliding-sec">
+                            <div class="holder">
+                                <div class="animate__animated sliderAnim slider" id="web" style="background-color: var(--secondary); --value: 60%"></div>
+                            </div>
+                            <h2 style="color: var(--main);">CSS, HTML and JS</h2>
+                        </div>
+                        <div class="sliding-sec">
+                            <div class="holder">
+                                <div class="animate__animated sliderAnim slider" id="design" style="background-color: greenyellow; --value: 65%"></div>
+                            </div>
+                            <h2 style="color: var(--main);">UI And Layout Design</h2>
+                        </div>
+                        <div class="sliding-sec">
+                            <div class="holder">
+                                <div class="animate__animated sliderAnim slider" id="modeling" style="background-color: var(--third); --value: 50%"></div>
+                            </div>
+                            <h2 style="color: var(--main);">3D Modeling</h2>
+                        </div>
+                        <script>addAnim("game", "sliderAnim", ".sliders", 0.4, true)</script>
+                        <script>addAnim("web", "sliderAnim", ".sliders", 0.3, true)</script>
+                        <script>addAnim("design", "sliderAnim", ".sliders", 0.2, true)</script>
+                        <script>addAnim("modeling", "sliderAnim", ".sliders", 0.1, true)</script>
+                    </div>
+                </div>
+
+                <script>addAnim("skill_title", "titleSlide", ".skill-tracker", 0, true)</script>
+
+
+                <div class="sw-1-3 skill-panels">
+                    <div class="sw-panel sw" id="skill-panel-left">
+                        <div class="selector">
+                            <button class="button selected dark-blue animate__animated animate__fadeInUp" id="bs1" onclick="showSkillId(1)">C# Coding & Unity</button>
+                            <button class="button blue animate__animated animate__fadeInUp" id="bs2" onclick="showSkillId(2)">CSS, HTML and JS</button>
+                            <button class="button green animate__animated animate__fadeInUp" id="bs3" onclick="showSkillId(3)">UI And Layout Design</button>
+                            <button class="button orange animate__animated animate__fadeInUp" id="bs4" onclick="showSkillId(4)">3D Modeling</button>
+                            <script>addAnim("bs1", "animate__fadeInUp", ".selector", .4)</script>
+                            <script>addAnim("bs2", "animate__fadeInUp", ".selector", .3)</script>
+                            <script>addAnim("bs3", "animate__fadeInUp", ".selector", .2)</script>
+                            <script>addAnim("bs4", "animate__fadeInUp", ".selector", .1)</script>
+                        </div>
+                    </div>
+                    <div class="sw hide" id="skill-panel-right">
+                        <div class="sw-panel selected" id="ps1">
+                            <h2 class="heading" style="color: var(--main)">C# Coding & Unity</h2>
+                            <div class="splitted-text">
+                                <p class="animate__animated animate__fadeInUp" id="ps1-1">As of today I've created 1 games using C# and 1 using Unity, atleast those are the ones that are worth mentioning.<br><br>The games I've created are not that fancy but, they do work</p>
+                                <div class="animate__animated animate__fadeInUp" id="ps1-2">
+                                    Here's a list of the games I've created:
+                                    <ul style="color: var(--main)">
+                                        <li>Lego</li>
+                                        <li>Chess</li>
+                                    </ul>
+                                </div>
+                                <script>addAnim("ps1-1", "animate__fadeInUp", ".selector", .1)</script>
+                                <script>addAnim("ps1-2", "animate__fadeInUp", ".selector", .0)</script>
+                            </div>
+                        </div>
+                        <div class="sw-panel" id="ps2">
+                            <h2 class="heading" style="color: var(--secondary)">CSS, HTML and JS</h2>
+                            <div class="splitted-text">
+                                <p class="animate__animated animate__fadeInUp" id="ps2-1">I've created and build many websites from scratch, some for Buisnieses and some for my self. I'm pretty new to working with CSS and HTML as I've only been working with it for a couple of months.</p>
+                                <div class="animate__animated animate__fadeInUp" id="ps2-2">
+                                    Here's a list of websites I've created:
+                                    <ul style="color: var(--secondary)">
+                                        <li>Portfolio</li>
+                                        <li>Commercial</li>
+                                        <li>Album</li>
+                                    </ul>
+                                </div>
+                                <script>addAnim("ps2-1", "animate__fadeInUp", ".selector", .1)</script>
+                                <script>addAnim("ps2-2", "animate__fadeInUp", ".selector", .0)</script>
+                            </div>
+                        </div>
+                        <div class="sw-panel" id="ps3">
+                            <h2 class="heading" style="color: greenyellow">UI And Layout Design</h2>
+                            <div class="splitted-text">
+                                <p class="animate__animated animate__fadeInUp" id="ps3-1">When I created the Unity games and Websites I had to know how to layout something for it to be as easy as it can for the user to use.<br><br>So I took some hours and learned how to create propper layouts that are easy to read and understand</p>
+                                <p class="animate__animated animate__fadeInUp" id="ps3-2">Since I atleast for my games wanted to have everything made by me, so no copyrighted images I also experimented with photoshop and created own icons</p>
+                                <script>addAnim("ps3-1", "animate__fadeInUp", ".selector", .1)</script>
+                                <script>addAnim("ps3-2", "animate__fadeInUp", ".selector", .0)</script>
+                            </div>
+                        </div>
+                        <div class="sw-panel" id="ps4">
+                            <h2 class="heading" style="color: var(--third)">3D Modeling</h2>
+                            <div class="splitted-text">
+                                <p class="animate__animated animate__fadeInUp" id="ps4-1">When I create my games I don't want to struggle with copyright issues in the future so I started to create my own 3D models for the games</p>
+                                <p class="animate__animated animate__fadeInUp" id="ps4-2">I did some basic models and low poly ones for the game style. But I believe that I can create almost any kind of model if I want.</p>
+                                <script>addAnim("ps4-1", "animate__fadeInUp", ".selector", .1)</script>
+                                <script>addAnim("ps4-2", "animate__fadeInUp", ".selector", .0)</script>
+                            </div>
+                        </div>
+                        <script src="/js/skillSlider.js"></script>
+                    </div>
+                </div>
+
+                <script>addAnim("skill-panel-large", "animate__fadeInDown", ".skill-section", 0)</script>
+                <script>addAnim("skill-panel-left", "animate__fadeInLeft", ".skill-section", .3)</script>
+                <script>addAnim("skill-panel-right", "animate__fadeInRight", ".skill-section", .3)</script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education section -->
+
+    <section class="block education">
+        <div class="block">
+            <div class="centered edu-section">
+                <div class="title education_title" id="education_title">
+                    <h1>Education</h1>
+                </div>
+                <div class="sw-1-3 education-tracker">
+                    <div class="sw-panel sw" id="edu-panel-left" style="display:flex; flex-direction: column; justify-content: space-around; align-items: center;">
+                        <div style="position: absolute; top: 0; left: 0; background-color: transparent;" class="section-tracker-ed"></div>
+                        <div class="sw-splitted animate__animated" id="educ-1" style="width: 50% !important; min-width: 300px; margin: auto;">
+                            <div class="bock-mark checked"><img src="/images/icons/checkmark.png"></div>
+                            <p>Kindergarden</p>
+                        </div>
+                        <div class="sw-splitted animate__animated" id="educ-2" style="width: 50% !important; min-width: 300px; margin: auto;">
+                            <div class="bock-mark checked"><img src="/images/icons/checkmark.png"></div>
+                            <p>Elementary School</p>
+                        </div>
+                        <div class="sw-splitted animate__animated" id="educ-3" style="width: 50% !important; min-width: 300px; margin: auto;">
+                            <div class="bock-mark half"><img src="/images/icons/checkmark.png"></div>
+                            <p>High School</p>
+                        </div>
+                        <div class="sw-splitted animate__animated" id="educ-4" style="width: 50% !important; min-width: 300px; margin: auto;">
+                            <div class="bock-mark not"><img src="/images/icons/checkmark.png"></div>
+                            <p>University</p>
+                        </div>
+
+                        <script>addAnim("educ-1", "animate__fadeInUp", ".education-tracker", .3)</script>
+                        <script>addAnim("educ-2", "animate__fadeInUp", ".education-tracker", .2)</script>
+                        <script>addAnim("educ-3", "animate__fadeInUp", ".education-tracker", .1)</script>
+                        <script>addAnim("educ-4", "animate__fadeInUp", ".education-tracker", .0)</script>
+                        <script>addAnim("education_title", "titleSlide", ".education-tracker", 0, true)</script>
+                    </div>
+                    <div class="sw-panel sw" id="edu-panel-right">
+                        <div class="splitted-text">
+                            <div>
+                                <h2 class="heading" style="color: var(--third)">Today</h2>
+                                <p class="animate__animated animate__fadeInUp" id="educ-5">As of today I've completed Elementary School and are currently studying <strong>Technology</strong> at <strong>Grillska Gymnasiet Eskilstuna</strong></p>
+                            </div>
+                            <div>
+                                <h2 class="heading" style="color: var(--secondary)">Future</h2>
+                                <p class="animate__animated animate__fadeInUp" id="educ-6">My plans for the future are to continue study and focus more on development. But I've havnt decided what type of developing I want to do yet, but right now it's leaning more for either <strong>frontend development</strong> or <strong>game development</strong></p>
+                            </div>
+                            <script>addAnim("educ-5", "animate__fadeInUp", ".education-tracker", .1)</script>
+                            <script>addAnim("educ-6", "animate__fadeInUp", ".education-tracker", .0)</script>
+                        </div>
+                    </div>
+                </div>
+
+                <script>addAnim("edu-panel-left", "animate__fadeInLeft", ".edu-section", .3)</script>
+                <script>addAnim("edu-panel-right", "animate__fadeInRight", ".edu-section", .3)</script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+
+    <section class="block contact">
+        <div class="block">
+            <div class="centered contact-section">
+                <div class="title contact_title" id="contact_title">
+                    <h1>Contact</h1>
+                </div>
+                <div class="sw-large contact-tracker" id="contact-panel-large">
+                    <div class="sw-panel">
+                        <div class="splitted-text">
+                            <div class="contactInfo">
+                                <div class="sw-splitted underlined" id="cont-1">
+                                    <div><strong>Mail:</strong></div>
+                                    <div>alex_hellsten@outlook.com</div>
+                                </div>
+                                <div class="sw-splitted underlined" id="cont-2">
+                                    <div><strong>Cellphone:</strong></div>
+                                    <div>+46 70 473 58 86</div>
+                                </div>
+                                <div class="sw-splitted underlined" id="cont-3">
+                                    <div><strong>Discord:</strong></div>
+                                    <div>ThiccTapeman#3672</div>
+                                </div>
+                            </div>
+                            <p id="cont-4">Feel free to contact me at <strong>anytime</strong> and I'll respond when <strong>I have time.</strong></p>
+
+                            <script>addAnim("cont-1", "animate__fadeInUp", ".contact-tracker", .3)</script>
+                            <script>addAnim("cont-2", "animate__fadeInUp", ".contact-tracker", .2)</script>
+                            <script>addAnim("cont-3", "animate__fadeInUp", ".contact-tracker", .1)</script>
+                            <script>addAnim("cont-4", "animate__fadeInUp", ".contact-tracker", .0)</script>
+                            <script>addAnim("contact_title", "titleSlide", ".contact-tracker", 0, true)</script>
+                        </div>
+                    </div>
+                    <script>addAnim("contact-panel-large", "animate__fadeInDown", ".contact-section", 0)</script>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="ft-block">
+            <div class="flex">
+                <div class="ft" id="ft-1">
+                    <div class="logo">
+                        <img src="/images/logo.jpg">
+                        <div class="logo-text">
+                            Alexander
+                        </div>
+                    </div>
+                </div>
+                <div class="ft" id="ft-2">
+                    <button class="backtotop" onclick="scrollToTarget('.home')">Back To Top</button>
+                    <div class="sitemap">
+                        <div class="sm-title">Navigation</div>
+                        <button onclick="scrollToTarget('.home')">Home</button>
+                        <button onclick="scrollToTarget('.about-tracker')">About</button>
+                        <button onclick="scrollToTarget('.skill-tracker')">Skills</button>
+                        <button onclick="scrollToTarget('.section-tracker-ed')">Education</button>
+                        <button onclick="scrollToTarget('.contact-tracker')">Contact</button>
+                    </div>
+                </div>
+                <script>addAnim("ft-1", "animate__fadeInLeftBig", ".ft-block", .1)</script>
+                <script>addAnim("ft-2", "animate__fadeInRightBig", ".ft-block", .2)</script>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/connectingDots.js"></script>
+    <script src="/js/headerTracking.js"></script>
+    <script>addHeaderTracking(".home", "header1")</script>
+    <script>addHeaderTracking(".about-tracker", "header2")</script>
+    <script>addHeaderTracking(".skill-tracker", "header3")</script>
+    <script>addHeaderTracking(".section-tracker-ed", "header4")</script>
+    <script>addHeaderTracking(".contact-tracker", "header5")</script>
 </body>
 </html>
